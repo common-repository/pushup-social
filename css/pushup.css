@@ -1,0 +1,294 @@
+.pushup-social-panel {
+    background: #EEE url('http://pushup.com/img/jumbo-bg.jpg') no-repeat center center;
+    border-radius: 15px;
+    width: 600px;
+    min-height: 200px;
+    padding: 20px;
+    text-align: center;
+    color: #FFF;
+    margin-top: 25px;
+}
+
+p.pushup-social-description {
+    font-size: 16px;
+}
+
+.pushup-social-panel h1,
+.pushup-social-panel h2,
+.pushup-social-panel h3,
+.pushup-social-panel h4,
+.pushup-social-panel h5,
+.pushup-social-panel h6 {
+    color: #FFF;
+}
+
+.pushup-social-conversion-btn {
+    margin-top: 10px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    color: #ffffff;
+    background-color: #0bbca1;
+    border: none;
+    border-bottom: 5px solid #069a83;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.pushup-social-helptext {
+    max-width: 415px;
+}
+
+.pushup-social-conversion-btn:hover {
+    color: #ffffff;
+    background-color: #35F0D3;
+    border-color: #14BBA2;
+}
+
+.pushup-social-conversion-btn.blue {
+    background-color: #0b8bbb;
+    border-left-color: #0b8bbb;
+    border-right-color: #0b8bbb;
+    border-bottom-color: #0a7299;
+}
+
+.pushup-social-conversion-btn.blue:hover {
+    text-decoration: none;
+    background-color: #0bbca1;
+    border-bottom-color: #069a83;
+}
+
+.pushUpSocial form .pushup-social-conversion-btn {
+    font-size: 15px;
+    padding: 5px 11px;
+}
+
+.pushup-social-panel > img.pushup-social-logo {
+    width: 275px;
+}
+
+.pushup-social-hide {
+    display: none;
+}
+
+.pushup-social-slider.on {
+
+}
+.pushup-social-slider.off {
+
+}
+
+.pushup-social-slider .option.selected {
+
+}
+
+.onoffswitch {
+    position: relative;
+    width: 87px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #FFFFF; border-radius: 10px;
+}
+.onoffswitch-inner {
+    width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    float: left;
+    width: 50%;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    font-size: 20px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #35F0D3; color: #FFF;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 6px;
+    background-color: #990000;
+    text-align: right;
+}
+.onoffswitch-switch {
+    width: 30px; margin: 2px;
+    background: #FFF;
+    border: 2px solid #FFF; border-radius: 10px;
+    position: absolute; top: 0; bottom: 0; right: 48px;
+    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s;
+}
+input.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px;
+}
+
+.pushup-social-learn-more {
+    font-size: 15px;
+    text-decoration: none;
+    color: #0EB2F0;
+}
+
+.pushup-main-div {
+    width:100%;
+    background:#4990e1;
+    font-size:1.3em;
+    font-family: "Open Sans",sans-serif;
+}
+.pushup-logo {
+    float:left;
+    height: 80px;
+    width: 96%;
+    padding:1%;
+    padding-left:2%;
+    background:#4990e1;
+}
+.pushup-content{
+    height:470px;
+    width:98%;
+    padding:1%;
+}
+.pushup-form{
+    float:left;
+    width:100%;
+}
+.pushup-element {
+    padding:20px;
+    margin-left:1%;
+    width:94%;
+    padding-bottom : 15px;
+    line-height:1.7em;
+    display:inline-block;
+}
+
+.pushup-button{
+    box-shadow: inset 0 1px 0 #aaa,0 1px 0 rgba(0,0,0,.15);
+    background:#0789FF;
+    font-weight:bold;
+    text-align:center;
+    color:#fff;
+    margin:5px;
+    width:230px;
+    padding:10px;
+    text-decoration: none;
+    display:block;
+    float:left;
+    cursor:pointer;
+    border-radius: 7px ;
+    border: 1px solid #aaa;
+}
+
+.pushup-link{
+    box-shadow: inset 0 1px 0 #aaa,0 1px 0 rgba(0,0,0,.15);
+    background:#97C06E;
+    font-weight:bold;
+    text-align:center;
+    color:#fff;
+    width:270px;
+    padding:12px;
+    text-decoration: none;
+    display:block;
+    margin-left: auto;
+    margin-right:auto;
+    margin-bottom:30px;
+    border-radius: 10px ;
+}
+
+.pushup-link:hover{
+    color:#eee;
+}
+
+.pushup-text{
+    background:#ccc;
+    color:#fff;
+    margin:5px;
+    float:left;
+}
+
+.pushup-field {
+    width:480px;
+    padding:15px;
+    text-decoration: none;
+    display:block;
+    margin-left: auto;
+    margin-right:auto;
+    margin-bottom:30px;
+    height:40px;
+}
+
+.pushup-title{
+    text-align:center;
+    line-height:2em;
+    padding-bottom:10px;
+    font-weight:bold;
+    color:#ddd;
+    clear:both;
+}
+
+.pushup-title a, .blue_link{
+    text-decoration:none;
+    color:#0AE8FF;
+}
+
+
+
+.pushup-text-input {
+    width:220px;
+    font-size:1.1em;
+    border:1px solid #ccc;
+    padding:9px;
+    color:#aaa;
+    background:#eee;
+}
+
+
+.pushup-computer {
+    width:732px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top:5px;
+}
+
+.pushup-associate-content{
+    display:none
+}
+
+input[type=text]{
+    background:#ddd;
+    color:#777
+}

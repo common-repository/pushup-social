@@ -1,0 +1,18 @@
+<?php
+if(!pushup_boolean_yesno(PUSHUP_OPTION_CONFIG_RESOLVED))
+    resolve_pushup_options();
+
+$community_id = pushup_get_option(PUSHUP_OPTION_COMMUNITY);
+?>
+<script>
+    //PushupSocial snippet
+    (function (p, s, h) {
+        (p[s] = p[s] || []).push(["_setAccount", "<?php echo $community_id ?>"],
+                                 ["_setCDN", h],
+                                 ["_setUrl", "<?php echo PUSHUP_OPTIONS_DESKTOP_URL ?>"],
+                                 ["_displayBar"]);
+        s = (p = p.document).createElement("script");
+        s.src = h + "/pushup.min.js";
+        p.getElementsByTagName("head")[0].appendChild(s);
+    })(window, "_pa", "<?php echo PUSHUP_OPTIONS_CDN_URL ?>");
+</script>

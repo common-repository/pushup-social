@@ -1,0 +1,114 @@
+<?php
+add_thickbox();
+
+$pushupSocial = new PushupSocial();
+$site_id = pushup_get_option(PUSHUP_OPTIONS_SITE_ID);
+pushup_set_option(PUSHUP_OPTIONS_SITE_ID, $site_id);
+$community_id = pushup_get_option(PUSHUP_OPTION_SAVED_COMMUNITY);
+$is_configured = pushup_boolean_yesno(PUSHUP_OPTION_CONFIGURED);
+$is_confirm_redirect = isset($_GET['confirm_redirect']) ? (bool) $_GET['confirm_redirect'] : false;
+
+if (!$community_id){
+    $site_id = sha1(uniqid(mt_rand(), true));
+    pushup_set_option(PUSHUP_OPTIONS_SITE_ID, $site_id);
+}
+
+?>
+ <script>
+ (function($) { 'use strict';
+   $(document).ready(function($){
+
+     $( ".pushup-associate" ).click(function(event) {
+       $( ".pushup-associate-content" ).slideDown("slow");
+       event.preventDefault();
+     });
+   });
+
+   $(window).bind('tb_unload', function() {
+     location.reload();
+   });
+ }(jQuery));
+
+</script>
+<div class="wrap pushUpSocial">
+    <form method="post" action="options.php">
+        <?php settings_fields(PUSHUP_OPTIONS_GROUP); ?>
+        <input type="hidden" name="<?php echo PUSHUP_OPTIONS_NAME ?>[<?php echo PUSHUP_OPTION_CONFIGURED ?>]" value="no"/>
+        <div class = "pushup-main-div">
+            <div class = "pushup-logo">
+                <img height ="50" src = "https://s3.amazonaws.com/pushup-cdn/pushup-white.svg">
+            </div>
+            <div class = "pushup-content">
+                <div class = "pushup-form">
+                    <div class = "pushup-element">
+
+                        <?php
+                        $site_url = get_option('siteurl');
+                        $redirect_url = $site_url . "/wp-admin/plugins.php?page=" . PUSHUP_PAGESLUG_CONFIG . "&confirm_redirect=1";
+                        $redirect_url = preg_replace("/^http.?:\/\//", "", $redirect_url);
+
+                        $site_url = urlencode($site_url);
+                        $redirect_url = urlencode($redirect_url);
+
+                        if(!$is_configured && !$is_confirm_redirect) :
+                            $url = PUSHUP_OPTIONS_REGISTRATION_URL ;
+                            $url .= "?partyName=wordpress&partyId={$site_id}&email=" . get_option('admin_email') . "&redirectUrl={$redirect_url}";
+                            $url .= "&url=" . $site_url . "&site=" . get_option('blogname') . "&width=900&height=550&TB_iframe=true";
+                        ?>
+                        <a class = "pushup-link thickbox" id="modal_link_create" href="<?php echo $url  ?>">
+                            Create your Community
+                        </a>
+                        <div class = "pushup-title">
+                            Already have a Pushup Community? Install your existing community <a href = "#" class = "pushup-associate">here</a>.
+                        </div>
+                        <?php
+                        else :
+                        ?>
+                        <a class = "pushup-link thickbox" id="modal_link_create" href="<?php echo $pushupSocial->getNetworkIDRoute($pushupSocial->getAdminUrl(), "?TB_iframe=true&width=800&height=600", $community_id) ?>">
+                            Manage your Community
+                        </a>
+                        <div class = "pushup-title">
+                            Congratulations! You have an active Pushup community. Switch to another existing community <a href = "#" class = "pushup-associate">here</a>.
+                        </div>
+                        <?php
+                        endif;
+                        ?>
+                    </div>
+                    <form method="post" action="options.php">
+                        <div class = "pushup-element pushup-grey pushup-associate-content">
+                            <div class = "pushup-field">
+                                <div class = "pushup-text">
+                                    <input type = "text" class = "pushup-text-input" id="community_id" name="<?php echo PUSHUP_OPTIONS_NAME ?>[<?php echo PUSHUP_OPTION_SAVED_COMMUNITY ?>]"
+                                           value="<?php echo $community_id ?>"/>
+                                </div>
+                                <button class = "pushup-button pushup-associate-button" type="submit" value="<?php _e('Save Changes') ?>">
+                                   Save Community ID
+                                </button>
+                            </div>
+                            <div class = "pushup-title">
+                                <ul>
+                                    <?php
+                                    if($community_id != "" && !$is_configured) :
+                                    ?>
+                                        <li> - The community id you entered is not valid.</li>
+                                        <li> - You can find your community id in the <a class="thickbox" href="<?php echo $pushupSocial->getNetworkIDRoute($pushupSocial->getAdminUrl(), "?TB_iframe=true&width=800&height=600", $community_id) ?>">admin panel</a> under settings.</li>
+                                    <?php
+                                    else :
+                                    ?>
+                                        <li> - You can find your community id in the <a class="thickbox" href="<?php echo $pushupSocial->getNetworkIDRoute($pushupSocial->getAdminUrl(), "?TB_iframe=true&width=800&height=600", $community_id) ?>">admin panel</a> under settings.</li>
+                                    <?php
+                                    endif;
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
+                        <input type="hidden" name="action" value="update" />
+                    </form>
+                    <div class = "pushup-computer">
+                        <img align="middle" class = "computer_img" height = "450" src = "http://cdn.pushup.com/pushup_computer.png">
+                    </div>
+                </div>
+            </div>
+        <div>
+    </form>
+</div>
